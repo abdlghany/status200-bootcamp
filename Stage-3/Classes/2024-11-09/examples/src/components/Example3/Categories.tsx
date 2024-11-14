@@ -8,8 +8,8 @@ interface Category {
 }
 
 const Categories = () => {
-    const [categories, setCategories] = useState<Category[]>([]);
     const [activeCategory, setactiveCategory] = useState<Category | null>(null);
+    const [categories, setCategories] = useState<Category[]>([]);
 
     /* New additions to Mr.Karel's code */
     const [categoryField, setCategoryField] = useState("");
@@ -75,9 +75,10 @@ const Categories = () => {
                     ))}
                 </div>
             </div>
-            {activeCategory ? <ProductList category={activeCategory} /> : ""}
+            {activeCategory ? <ProductList category={activeCategory} categories = {categories}/> : ""}
         </>
     );
 };
+
 
 export default Categories;
